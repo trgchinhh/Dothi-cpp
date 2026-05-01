@@ -7,7 +7,7 @@
 int docfile(const char* tenfile, DanhSachKe& dsk, int flag) {
     FILE* f = fopen(tenfile, "rt");
     if (f == NULL){
-        cout << "Không thể đọc file: " << tenfile << endl;
+        cout << "Khong the doc file: " << tenfile << endl;
         return 0;        
     } 
     fscanf(f, "%d", &dsk.sodinh);
@@ -35,7 +35,7 @@ int docfile(const char* tenfile, DanhSachKe& dsk, int flag) {
         }
     }
     fclose(f);
-    cout << "Đã đọc file: " << tenfile << endl;
+    cout << "Da doc file: " << tenfile << endl;
     return 1;
 }
 
