@@ -21,8 +21,10 @@ void menu(){
 int main(){
     system("cls");
     DanhSachKe dsk1, dsk2;
-    docfile("dothi1.txt", dsk1, 1);
-    docfile("dothi2.txt", dsk2, 1);
+    if(!docfile("dothi1.txt", dsk1, 1) || !docfile("dothi2.txt", dsk2, 1)){
+        cout << "Da xay ra loi khi doc file !" << endl;
+        return -1;
+    }
     bool visited[MAXDSK];
     DanhSachDinhDaTham dsd1;
     DanhSachCanh dsc1;
@@ -53,38 +55,44 @@ int main(){
             cout << "\nDuyet BFS: "; 
             cau_1(dsk1, dinh1, visited); 
             cout << endl;
-        } else if(luachon == 2){
+        } 
+        else if(luachon == 2){
             int dinh2; nhapdinhmuonduyet(dsk1, dinh2);
             cout << "\nDuyet BFS: ";
             cau_2(dsk1, dinh2, visited, dsd1, dsc1);
             cout << endl;
             duyetds_dinh(dsd1);
             duyetds_canh(dsc1);
-        } else if(luachon == 3){
+        } 
+        else if(luachon == 3){
             cout << "\nDuyet BFS: ";
             cau_3(dsk1, visited, dsd1, dsc1);
             cout << endl;
             duyetds_dinh(dsd1);
             duyetds_canh(dsc1);  
-        } else if(luachon == 4){
+        } 
+        else if(luachon == 4){
             int dinh4; nhapdinhmuonduyet(dsk1, dinh4);
             cout << "\nDuyet DFS: ";
             cau_4(dsk1, dinh4, visited);
             cout << endl;   
-        } else if(luachon == 5){
+        } 
+        else if(luachon == 5){
             int dinh5; nhapdinhmuonduyet(dsk1, dinh5);
             cout << "\nDuyet DFS: ";
             cau_5(dsk1, dinh5, visited, dsd1, dsc1);
             cout << endl;
             duyetds_dinh(dsd1);
             duyetds_canh(dsc1);
-        } else if(luachon == 6){
+        } 
+        else if(luachon == 6){
             cout << "\nDuyet BFS: ";
             cau_6(dsk1, visited, dsd1, dsc1);
             cout << endl;
             duyetds_dinh(dsd1);
             duyetds_canh(dsc1); 
-        } else if(luachon == 7){
+        } 
+        else if(luachon == 7){
             cout << endl;
             cout << "[1] Duyệt DFS" << endl;
             cout << "[2] Duyệt BFS" << endl;
@@ -92,28 +100,34 @@ int main(){
             int chon; cin >> chon;
             if(chon == 1){
                 cout << "\nSo thanh phan lien thong: " << cau_7_dfs(dsk1, visited);
-            } else {
+            } 
+            else {
                 cout << "\nSo thanh phan lien thong: " << cau_7_bfs(dsk1, visited);
             }
             cout << endl;
-        } else if(luachon == 9){
+        } 
+        else if(luachon == 9){
             cout << "\nTap dinh sau khi duoc sap xep topo\n";
             DanhSachDinhDaTham dsd = cau_9(dsk1, visited, topo);
             duyetds_dinh(dsd); 
             cout << endl;
-        } else if(luachon == 10){
+        } 
+        else if(luachon == 10){
             // cho tap canh vi du 
             cout << "\nDanh sach canh sau khi sap xep giam dan theo trong so\n";
             cau_10(dscvd);
             duyetds_canh(dscvd);
             cout << endl;
-        } else if(luachon == 11){
+        } 
+        else if(luachon == 11){
             bool dothilacay = cau_11(dsk2, visited);
             cout << boolalpha << "\nDo thi la cay: " << dothilacay << endl;
-        } else if(luachon == 0){
+        } 
+        else if(luachon == 0){
             cout << "\nThoat chuong trinh" << endl;
             exit(0);
-        } else {
+        } 
+        else {
             cout << "\nVui long chon theo menu !" << endl;
         }
         system("pause");
