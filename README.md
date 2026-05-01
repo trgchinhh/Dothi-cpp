@@ -2,4 +2,4 @@
 
 Các bài còn thiếu sẽ được bổ sung sau
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/9e5dc28d-bfdc-4b93-82c1-fec19e726ff4" />
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/106fdc6d-9c00-45c2-a734-4277d7dfe15a" />
