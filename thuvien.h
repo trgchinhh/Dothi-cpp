@@ -1,3 +1,6 @@
+// tắt cảnh báo và lỗi khi dùng fopen và fscanf
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include <stack>
 #include <queue>
