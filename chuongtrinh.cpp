@@ -1,5 +1,23 @@
 #include "thuvien.h"
 
+void menu(){
+    cout << "┌───────────────────┐" << endl;
+    cout << "│    MENU DO THI    │" << endl;
+    cout << "├───────────────────┘" << endl;
+    cout << "│ [00] Thoat chuong trinh" << endl;
+    cout << "│ [01] Duyet do thi theo BFS" << endl;
+    cout << "│ [02] BFS tu dinh v, luu dinh va canh" << endl;
+    cout << "│ [03] BFS toan bo do thi, luu dinh va canh" << endl;
+    cout << "│ [04] Duyet do thi theo DFS" << endl;
+    cout << "│ [05] DFS tu dinh v, luu dinh va canh" << endl;
+    cout << "│ [06] DFS toan bo do thi, luu dinh va canh" << endl;
+    cout << "│ [07] Dem thanh phan lien thong (do thi vo huong)" << endl;
+    cout << "│ [09] Duyet tap canh da duoc sap xep topo" << endl;
+    cout << "│ [10] Sap xep tap canh giam dan theo trong so" << endl;
+    cout << "│ [11] Kiem tra do thi la cay" << endl;
+    cout << "└───> Nhap lua chon: ";
+}
+
 int main(){
     system("cls");
     DanhSachKe dsk1, dsk2;
@@ -28,21 +46,7 @@ int main(){
         taomoidanhsachdinh(dsd1);
         taomoidanhsachcanh(dsc1);
         taomoidanhsachtopo(topo);
-        cout << "┌───────────────────┐" << endl;
-        cout << "│    MENU DO THI    │" << endl;
-        cout << "├───────────────────┘" << endl;
-        cout << "│ [00] Thoat chuong trinh" << endl;
-        cout << "│ [01] Duyet do thi theo BFS" << endl;
-        cout << "│ [02] BFS tu dinh v, luu dinh va canh" << endl;
-        cout << "│ [03] BFS toan bo do thi, luu dinh va canh" << endl;
-        cout << "│ [04] Duyet do thi theo DFS" << endl;
-        cout << "│ [05] DFS tu dinh v, luu dinh va canh" << endl;
-        cout << "│ [06] DFS toan bo do thi, luu dinh va canh" << endl;
-        cout << "│ [07] Dem thanh phan lien thong (do thi vo huong)" << endl;
-        cout << "│ [09] Duyet tap canh da duoc sap xep topo" << endl;
-        cout << "│ [10] Sap xep tap canh giam dan theo trong so" << endl;
-        cout << "│ [11] Kiem tra do thi la cay" << endl;
-        cout << "└───> Nhap lua chon: ";
+        menu();
         int luachon; cin >> luachon;
         if(luachon == 1){
             int dinh1; nhapdinhmuonduyet(dsk1, dinh1);
