@@ -39,8 +39,8 @@ int docfile(const char* tenfile, DanhSachKe& dsk, int flag) {
     return 1;
 }
 
-void taomoimangvisited(bool (&visited)[MAXDSK]){
-    fill(visited, visited+MAXDSK, false);
+void taomoimangvisited(bool visited[], int n){
+    fill(visited, visited+n, false);
 }
 
 void nhapdinhmuonduyet(DanhSachKe& dsk, int& dinh){
@@ -132,29 +132,11 @@ void cau_2(DanhSachKe& dsk, int v, bool visited[], DanhSachDinhDaTham& dsd, Danh
 
 void cau_3(DanhSachKe& dsk, bool visited[], DanhSachDinhDaTham& dsd, DanhSachCanh& dsc){
     for(int i = 0; i < dsk.sodinh; i++){
-        if(!visited[i]){
-            queue<int> q;
-            q.push(i);
-            visited[i] = true;
-            dsd.dsd[dsd.sodinhdatham++] = i;
-            while(!q.empty()){
-                int u = q.front();
-                q.pop();
-                cout << u << " ";  
-                Nodeptr p = dsk.dsk[u];
-                while(p != NULL){
-                    int v = p->dinhke;
-                    if(!visited[v]){
-                        q.push(v);
-                        visited[v] = true;
-                        dsd.dsd[dsd.sodinhdatham++] = v;
-                        Canh c = {u, v, p->trongso};
-                        dsc.dsc[dsc.socanh++] = c;
-                    }
-                    p=p->link;
-                }
-            }
-        }
+        taomoimangvisited(visited, MAXDSK);
+        dsd.sodinhdatham = 0;
+        dsc.socanh = 0;
+        cout << "\nDang duyet dinh " << i << ": ";
+        cau_2(dsk, i, visited, dsd, dsc);
     }
 }
 
@@ -205,7 +187,11 @@ void cau_6_duyetdfs(DanhSachKe& dsk, int dinh, bool visited[], DanhSachDinhDaTha
 
 void cau_6(DanhSachKe& dsk, bool visited[], DanhSachDinhDaTham& dsd, DanhSachCanh& dsc){
     for(int i = 0; i < dsk.sodinh; i++){
+        taomoimangvisited(visited, MAXDSK);
+        dsd.sodinhdatham = 0;
+        dsc.socanh = 0;
         if(!visited[i]){
+            cout << "\nDang duyet dinh " << i << ": ";
             cau_6_duyetdfs(dsk, i, visited, dsd, dsc);
         }
     }
