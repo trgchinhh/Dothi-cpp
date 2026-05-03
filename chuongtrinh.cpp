@@ -44,7 +44,7 @@ int main(){
 
     while(1){
         system("cls");
-        taomoimangvisited(visited);
+        taomoimangvisited(visited, MAXDSK);
         taomoidanhsachdinh(dsd1);
         taomoidanhsachcanh(dsc1);
         taomoidanhsachtopo(topo);
