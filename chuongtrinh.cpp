@@ -68,8 +68,6 @@ int main(){
             cout << "\nDuyet BFS: ";
             cau_3(dsk1, visited, dsd1, dsc1);
             cout << endl;
-            duyetds_dinh(dsd1);
-            duyetds_canh(dsc1);  
         } 
         else if(luachon == 4){
             int dinh4; nhapdinhmuonduyet(dsk1, dinh4);
@@ -89,8 +87,6 @@ int main(){
             cout << "\nDuyet BFS: ";
             cau_6(dsk1, visited, dsd1, dsc1);
             cout << endl;
-            duyetds_dinh(dsd1);
-            duyetds_canh(dsc1); 
         } 
         else if(luachon == 7){
             cout << endl;
