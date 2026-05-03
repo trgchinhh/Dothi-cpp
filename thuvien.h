@@ -1,4 +1,3 @@
-// tắt cảnh báo và lỗi khi dùng fopen và fscanf
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
@@ -51,7 +50,7 @@ struct Topo {
 int docfile(const char* tenfile, DanhSachKe& dsk, int flag);
 
 // tao moi mang visited
-void taomoimangvisited(bool (&visited)[MAXDSK]);
+void taomoimangvisited(bool visited[], int n);
 
 // tao moi ds dinh
 void taomoidanhsachdinh(DanhSachDinhDaTham& dsd);
