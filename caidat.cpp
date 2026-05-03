@@ -137,6 +137,9 @@ void cau_3(DanhSachKe& dsk, bool visited[], DanhSachDinhDaTham& dsd, DanhSachCan
         dsc.socanh = 0;
         cout << "\nDang duyet dinh " << i << ": ";
         cau_2(dsk, i, visited, dsd, dsc);
+        cout << endl;
+        duyetds_dinh(dsd);
+        duyetds_canh(dsc); 
     }
 }
 
@@ -193,6 +196,9 @@ void cau_6(DanhSachKe& dsk, bool visited[], DanhSachDinhDaTham& dsd, DanhSachCan
         if(!visited[i]){
             cout << "\nDang duyet dinh " << i << ": ";
             cau_6_duyetdfs(dsk, i, visited, dsd, dsc);
+            cout << endl;
+            duyetds_dinh(dsd);
+            duyetds_canh(dsc); 
         }
     }
 }
